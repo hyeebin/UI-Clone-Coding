@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0ED08E7229B45B790040A91E /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED08E7129B45B790040A91E /* ColorSet.swift */; };
+		0ED08E7329B4673B0040A91E /* SpoqaHanSansNeo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E441E9F29B4546700A449B9 /* SpoqaHanSansNeo-Bold.ttf */; };
+		0ED08E7429B4673E0040A91E /* SpoqaHanSansNeo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E441E9D29B4546700A449B9 /* SpoqaHanSansNeo-Medium.ttf */; };
+		0ED08E7529B467410040A91E /* SpoqaHanSansNeo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E441EA029B4546800A449B9 /* SpoqaHanSansNeo-Regular.ttf */; };
+		0ED08E7629B467440040A91E /* SpoqaHanSansNeo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E441E9E29B4546700A449B9 /* SpoqaHanSansNeo-Light.ttf */; };
+		0ED08E7729B467480040A91E /* SpoqaHanSansNeo-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E441E9C29B4546700A449B9 /* SpoqaHanSansNeo-Thin.ttf */; };
+		0ED08E7A29B46F130040A91E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED08E7929B46F130040A91E /* StringExtension.swift */; };
 		E397317029B1E8660062B6D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E397316F29B1E8660062B6D2 /* AppDelegate.swift */; };
 		E397317229B1E8660062B6D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E397317129B1E8660062B6D2 /* SceneDelegate.swift */; };
 		E397317429B1E8660062B6D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E397317329B1E8660062B6D2 /* ViewController.swift */; };
@@ -21,6 +28,8 @@
 		0E441E9E29B4546700A449B9 /* SpoqaHanSansNeo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Light.ttf"; sourceTree = "<group>"; };
 		0E441E9F29B4546700A449B9 /* SpoqaHanSansNeo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Bold.ttf"; sourceTree = "<group>"; };
 		0E441EA029B4546800A449B9 /* SpoqaHanSansNeo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Regular.ttf"; sourceTree = "<group>"; };
+		0ED08E7129B45B790040A91E /* ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
+		0ED08E7929B46F130040A91E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		E397316C29B1E8660062B6D2 /* TadaLoginClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TadaLoginClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E397316F29B1E8660062B6D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E397317129B1E8660062B6D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +54,7 @@
 		0E441E9A29B451A600A449B9 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				0ED08E7029B45B5C0040A91E /* Colors */,
 				0E441E9B29B4545200A449B9 /* Fonts */,
 			);
 			path = Resource;
@@ -54,12 +64,28 @@
 			isa = PBXGroup;
 			children = (
 				0E441E9F29B4546700A449B9 /* SpoqaHanSansNeo-Bold.ttf */,
-				0E441E9E29B4546700A449B9 /* SpoqaHanSansNeo-Light.ttf */,
 				0E441E9D29B4546700A449B9 /* SpoqaHanSansNeo-Medium.ttf */,
 				0E441EA029B4546800A449B9 /* SpoqaHanSansNeo-Regular.ttf */,
+				0E441E9E29B4546700A449B9 /* SpoqaHanSansNeo-Light.ttf */,
 				0E441E9C29B4546700A449B9 /* SpoqaHanSansNeo-Thin.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0ED08E7029B45B5C0040A91E /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				0ED08E7129B45B790040A91E /* ColorSet.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		0ED08E7829B46EF30040A91E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0ED08E7929B46F130040A91E /* StringExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		E397316329B1E8660062B6D2 = {
@@ -81,6 +107,7 @@
 		E397316E29B1E8660062B6D2 /* TadaLoginClone */ = {
 			isa = PBXGroup;
 			children = (
+				0ED08E7829B46EF30040A91E /* Extension */,
 				0E441E9A29B451A600A449B9 /* Resource */,
 				E397316F29B1E8660062B6D2 /* AppDelegate.swift */,
 				E397317129B1E8660062B6D2 /* SceneDelegate.swift */,
@@ -151,8 +178,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ED08E7329B4673B0040A91E /* SpoqaHanSansNeo-Bold.ttf in Resources */,
 				E397317C29B1E8670062B6D2 /* LaunchScreen.storyboard in Resources */,
+				0ED08E7629B467440040A91E /* SpoqaHanSansNeo-Light.ttf in Resources */,
 				E397317929B1E8670062B6D2 /* Assets.xcassets in Resources */,
+				0ED08E7429B4673E0040A91E /* SpoqaHanSansNeo-Medium.ttf in Resources */,
+				0ED08E7529B467410040A91E /* SpoqaHanSansNeo-Regular.ttf in Resources */,
+				0ED08E7729B467480040A91E /* SpoqaHanSansNeo-Thin.ttf in Resources */,
 				E397317729B1E8660062B6D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,7 +198,9 @@
 			files = (
 				E397317429B1E8660062B6D2 /* ViewController.swift in Sources */,
 				E397317029B1E8660062B6D2 /* AppDelegate.swift in Sources */,
+				0ED08E7A29B46F130040A91E /* StringExtension.swift in Sources */,
 				E397317229B1E8660062B6D2 /* SceneDelegate.swift in Sources */,
+				0ED08E7229B45B790040A91E /* ColorSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
