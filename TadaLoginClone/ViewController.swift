@@ -31,6 +31,15 @@ class ViewController: UIViewController {
         view.distribution = .fill
         return view
     }()
+    private lazy var stackBtn: UIStackView = {
+        var view = UIStackView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .vertical
+        view.alignment = .fill
+        view.spacing = 10
+        view.distribution = .fillEqually
+        return view
+    }()
     
     // Label
     private lazy var lbTitle: UILabel = {
@@ -41,7 +50,6 @@ class ViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
     private lazy var lbThinContent1: UILabel = {
         var label = UILabel()
         label.text = "승차거부 없는  바로배차"
@@ -67,6 +75,28 @@ class ViewController: UIViewController {
         return label
     }()
     
+    // Button
+    private lazy var btnJoin: UIButton = {
+        var button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 4
+        button.setTitle("가입하고 만원 쿠폰받기", for: .normal)
+        button.titleLabel?.font = UIFont(name: "SpoqaHanSansNeo-Bold", size: 16)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .custom_navy
+        return button
+    }()
+    private lazy var btnLogin: UIButton = {
+        var button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 4
+        button.setTitle("기존회원 로그인", for: .normal)
+        button.titleLabel?.font = UIFont(name: "SpoqaHanSansNeo-Bold", size: 16)
+        button.setTitleColor(.custom_navy, for: .normal)
+        button.backgroundColor = .custom_gray2
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -84,7 +114,11 @@ class ViewController: UIViewController {
         stackLb.addArrangedSubview(lbThinContent1)
         stackLb.addArrangedSubview(lbThinContent2)
         stackLb.addArrangedSubview(lbThinContent3)
-
+        
+        imgBack.addSubview(stackBtn)
+        
+        stackBtn.addArrangedSubview(btnJoin)
+        stackBtn.addArrangedSubview(btnLogin)
     }
     
     fileprivate func setFont() {
@@ -117,10 +151,28 @@ class ViewController: UIViewController {
             stackLb.leadingAnchor.constraint(equalTo: viewBack.leadingAnchor, constant: 36),
         ]
         
+        let stackBtnConstraints = [
+            stackBtn.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
+            stackBtn.leadingAnchor.constraint(equalTo: viewBack.leadingAnchor, constant: 30),
+            stackBtn.trailingAnchor.constraint(equalTo: viewBack.trailingAnchor, constant: -30)
+        ]
+        
+        let btnJoinConstraints = [
+            btnJoin.heightAnchor.constraint(equalToConstant: 60)
+        ]
+        
+        let btnLoginConstraints = [
+            btnLogin.heightAnchor.constraint(equalToConstant: 60)
+        ]
+        
         NSLayoutConstraint.activate(viewBackConstraints)
         NSLayoutConstraint.activate(imgBackConstraints)
         NSLayoutConstraint.activate(lbTitleConstraints)
         NSLayoutConstraint.activate(stackLbConstraints)
+        NSLayoutConstraint.activate(stackBtnConstraints)
+        NSLayoutConstraint.activate(btnJoinConstraints)
+        NSLayoutConstraint.activate(btnLoginConstraints)
+
     }
 }
 
