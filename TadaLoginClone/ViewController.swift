@@ -76,14 +76,14 @@ class ViewController: UIViewController {
     }()
     
     // Button
-    private lazy var btnJoin: UIButton = {
-        var button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
+    lazy var btnJoin: UIButton = {
+        var button = UIButton(type: .system)
         button.layer.cornerRadius = 4
         button.setTitle("가입하고 만원 쿠폰받기", for: .normal)
         button.titleLabel?.font = UIFont(name: "SpoqaHanSansNeo-Bold", size: 16)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .custom_navy
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     private lazy var btnLogin: UIButton = {
@@ -103,6 +103,7 @@ class ViewController: UIViewController {
         addView()
         applyConstraints()
         setFont()
+        addTarget()
     }
     
     fileprivate func addView() {
@@ -173,6 +174,19 @@ class ViewController: UIViewController {
         NSLayoutConstraint.activate(btnJoinConstraints)
         NSLayoutConstraint.activate(btnLoginConstraints)
 
+    }
+    
+    fileprivate func addTarget() {
+        imgBack.isUserInteractionEnabled = true
+        stackBtn.isUserInteractionEnabled = true
+        btnJoin.isUserInteractionEnabled = true
+        btnJoin.addTarget(self, action: #selector(didTapJoin(_:)), for: .touchUpInside)
+    }
+    
+    @objc func didTapJoin(_ sender: UIButton) {
+        let phoneVC = UIStoryboard.init(name: "PhoneInputViewController", bundle: nil).instantiateViewController(withIdentifier: "PhoneInputViewController") as! PhoneInputViewController
+        phoneVC.modalPresentationStyle = .fullScreen
+        self.present(phoneVC, animated: true)
     }
 }
 
